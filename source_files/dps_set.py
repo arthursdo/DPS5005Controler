@@ -13,7 +13,7 @@ slave_addr = 1
 class MyClass:
     
     def __init__(self):
-        self.limits = Import_limits("dps5005_limits.ini")
+        self.limits = Import_limits("/home/ossystem/DPS5005_pyGUI/source_files/dps5005_limits.ini")
         self.serialconnected = False
         self.time_old = ""
         self.parser = argparse.ArgumentParser()
