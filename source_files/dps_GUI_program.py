@@ -612,6 +612,7 @@ class dps_GUI(QMainWindow):
 			start = time.time()
 			self.mutex.lock()
 			a = eval("dps.%s('%s', %s)" % (function, cmd, value))
+			print(function, cmd, value)
 			self.mutex.unlock()
 			self.label_data_rate.setText("Data Rate : %8.3fms" % ((time.time() - start) * 1000.0)) # display rate of serial comms
 		return(a)
