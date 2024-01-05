@@ -27,8 +27,12 @@ class MyClass:
             self.off_change()
         elif self.args.command == '1':
             self.on_change()
+        elif self.args.command == 'r':
+            self.off_change()
+            time.sleep(10)
+            self.on_change()
         else:
-            print("Invalid command. Use 0 to turn off, 1 to turn on.")
+            print("Invalid command. Use 0 to turn off, 1 to turn on or r to reset.")
 
     def serial_connect(self): 
         self.serialconnected = False
