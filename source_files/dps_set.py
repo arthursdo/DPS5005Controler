@@ -13,7 +13,7 @@ slave_addr = 1
 class MyClass:
     
     def __init__(self):
-        self.limits = Import_limits("dps5005_limits.ini")
+        self.limits = Import_limits("/home/ossystem/DPS5005_pyGUI/source_files/dps5005_limits.ini")
         self.serialconnected = False
         self.time_old = ""
         self.parser = argparse.ArgumentParser()
@@ -27,8 +27,12 @@ class MyClass:
             self.off_change()
         elif self.args.command == '1':
             self.on_change()
+        elif self.args.command == 'r':
+            self.off_change()
+            time.sleep(10)
+            self.on_change()
         else:
-            print("Invalid command. Use 0 to turn off, 1 to turn on.")
+            print("Invalid command. Use 0 to turn off, 1 to turn on or r to reset.")
 
     def serial_connect(self): 
         self.serialconnected = False
